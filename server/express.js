@@ -23,7 +23,7 @@ app.use(cors({
 // Optional: Explicitly handle OPTIONS requests for all routes
 app.options('*', cors());
 
-app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
+app.use(express.static(path.join(CURRENT_WORKING_DIR, "dist/app")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", userRoutes);
